@@ -14,6 +14,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -64,10 +65,16 @@ public class MainActivity extends AppCompatActivity {
     Button signOutButton;
     TextView displayNametv;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Popular Movies");
+        setSupportActionBar(toolbar);
+
         dp=findViewById(R.id.photo);
         signOutButton=findViewById(R.id.signoutbutton);
         signOutButton.setVisibility(View.INVISIBLE);
@@ -206,13 +213,14 @@ public class MainActivity extends AppCompatActivity {
 
     public boolean onOptionsItemSelected(MenuItem item)
     {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         switch (item.getItemId())
         {
             case R.id.popular_menu:
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putBoolean(getString(R.string.faav),false);
                 editor.apply();
-                setTitle(getString(R.string.popular_menu));
+                toolbar.setTitle(getString(R.string.popular_menu));
                 if(amIConnected())
             {
                 new FetchingData().execute(Constants.POPULAR_QUERY);
@@ -226,7 +234,7 @@ public class MainActivity extends AppCompatActivity {
                 SharedPreferences.Editor editortop = sharedPreferences.edit();
                 editortop.putBoolean(getString(R.string.faav),false);
                 editortop.apply();
-                setTitle(getString(R.string.top_rated_menu));
+                toolbar.setTitle(getString(R.string.top_rated_menu));
                 if(amIConnected())
                 {
                     new FetchingData().execute(Constants.TOP_RATED_QUERY);
@@ -239,7 +247,7 @@ public class MainActivity extends AppCompatActivity {
                 SharedPreferences.Editor editorfav = sharedPreferences.edit();
                 editorfav.putBoolean(getString(R.string.faav),true);
                 editorfav.apply();
-                setTitle(R.string.favm);
+                toolbar.setTitle(R.string.favm);
                 openFavorites();
 
         }
@@ -247,7 +255,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void openFavorites() {
-        setTitle(Constants.FM);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(Constants.FM);
        favMovieViewModel.getAllResults().observe(this, modelMovieData -> {
            results = modelMovieData;
            FavAdapter favAdapter = new FavAdapter(MainActivity.this, modelMovieData);

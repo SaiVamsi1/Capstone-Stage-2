@@ -17,7 +17,7 @@
     </item>
     <item
         android:id="@+id/favourites"
-        android:title="Favourites"
+        android:title="@string/favourites"
         app:showAsAction="ifRoom"
         android:icon="@drawable/favadded">
     </item>

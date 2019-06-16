@@ -2,6 +2,15 @@
 apply plugin: 'com.android.application'
 
 android {
+
+    signingConfigs {
+        config {
+            keyAlias 'key0'
+            keyPassword 'myandroid'
+            storeFile file("$rootDir/mykeys.jks")
+            storePassword 'myandroid'
+        }
+    }
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.vamsi.popularmoviesstage1final"
@@ -15,6 +24,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
     }
     compileOptions {
