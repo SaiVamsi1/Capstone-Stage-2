@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name">Popular Movies</string>
+    <string name="sort_by">Sort By</string>
+    <string name="popular_menu">Popular Movies</string>
+    <string name="top_rated_menu">Top Rated Movies</string>
+    <string name="overview">Overview:</string>
+    <string name="rating">Rating</string>
+    <string name="releasedate">Release Date:</string>
+    <string name="contentdescription">Movie Poster</string>
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="popular">popular</string>
+    <string name="movie">movie</string>
+    <string name="imgbaseurl">https://image.tmdb.org/t/p/w185</string>
+    <string name="y1">http://api.themoviedb.org/3/movie/</string>
+    <string name="y2"><![CDATA[/videos?&api_key=c52dc26bff4c4ab80ffd0bcf9ac469cf]]></string>
+    <string name="result">results</string>
+    <string name="key">key</string>
+    <string name="name">name</string>
+    <string name="error">error</string>
+    <string name="r1">http://api.themoviedb.org/3/movie/</string>
+    <string name="r2">/reviews?api_key=c52dc26bff4c4ab80ffd0bcf9ac469cf</string>
+    <string name="noreviewt">There are no Reviews for this movie</string>
+    <string name="author">author</string>
+    <string name="content">content</string>
+    <string name="UnFav">UnFav</string>
+    <string name="Fav">Fav</string>
+    <string name="img">img</string>
+    <string name="mn">movie name</string>
+    <string name="af">_added to Favourites</string>
+    <string name="df">_deleted from favourites</string>
+    <string name="ff">favourites.db</string>
+    <string name="ii">https://image.tmdb.org/t/p/w185</string>
+    <string name="ede">movie</string>
+    <string name="aaid">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="ded">MyFile</string>
+    <string name="faav">FAV</string>
+    <string name="noi">Sorry! There is No Internet Connection</string>
+    <string name="sot">Successfully signed out</string>
+    <string name="hi">Hi!_</string>
+    <string name="se">Google Sign In Error</string>
+    <string name="se2">signInResult:failed code=</string>
+    <string name="fa">Failed</string>
+    <string name="noii">Sorry! There is No Internet Connection</string>
+    <string name="nooooi">Sorry! There is No Internet Connection</string>
+    <string name="favm">Favourite Movies</string>
+    <string name="iimgu">https://image.tmdb.org/t/p/w185</string>
+    <string name="sdfg">img</string>
+    <string name="imguu">https://image.tmdb.org/t/p/w185</string>
+    <string name="dewsfd">url</string>
+    <string name="nodc">url not found</string>
+    <string name="jhvg">movie name</string>
+    <string name="kljh">movie name not found</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="profile_name">Profile Name</string>
+    <string name="textview">TextView</string>
+    <string name="account_display_picture">Account Display Picture</string>
+    <string name="youtube_icon">Youtube Icon</string>
+    <string name="video_title">Video Title</string>
+    <string name="trailers">Trailers:</string>
+    <string name="reviews">Reviews:</string>
+    <string name="fav">fav</string>
+</resources>
