@@ -21,11 +21,9 @@ import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.Espresso.openActionBarOverflowOrOptionsMenu;
 import static android.support.test.espresso.Espresso.pressBack;
 import static android.support.test.espresso.action.ViewActions.click;
-import static android.support.test.espresso.action.ViewActions.scrollTo;
 import static android.support.test.espresso.contrib.RecyclerViewActions.actionOnItemAtPosition;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withClassName;
-import static android.support.test.espresso.matcher.ViewMatchers.withContentDescription;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
@@ -44,7 +42,7 @@ public class MainActivityTest {
         // The recommended way to handle such scenarios is to use Espresso idling resources:
         // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
         try {
-            Thread.sleep(10000);
+            Thread.sleep(7000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -53,8 +51,8 @@ public class MainActivityTest {
                 allOf(withId(R.id.recycler_view),
                         childAtPosition(
                                 withClassName(is("android.support.constraint.ConstraintLayout")),
-                                0)));
-        recyclerView.perform(actionOnItemAtPosition(9, click()));
+                                1)));
+        recyclerView.perform(actionOnItemAtPosition(6, click()));
 
         // Added a sleep statement to match the app's execution delay.
         // The recommended way to handle such scenarios is to use Espresso idling resources:
@@ -64,15 +62,6 @@ public class MainActivityTest {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
-        ViewInteraction appCompatButton = onView(
-                allOf(withId(R.id.button2), withText("Fav"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withClassName(is("android.widget.ScrollView")),
-                                        0),
-                                12)));
-        appCompatButton.perform(scrollTo(), click());
 
         pressBack();
 
@@ -111,54 +100,8 @@ public class MainActivityTest {
                 allOf(withId(R.id.recycler_view),
                         childAtPosition(
                                 withClassName(is("android.support.constraint.ConstraintLayout")),
-                                0)));
-        recyclerView2.perform(actionOnItemAtPosition(11, click()));
-
-        // Added a sleep statement to match the app's execution delay.
-        // The recommended way to handle such scenarios is to use Espresso idling resources:
-        // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
-        try {
-            Thread.sleep(7000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        ViewInteraction appCompatButton2 = onView(
-                allOf(withId(R.id.button2), withText("Fav"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withClassName(is("android.widget.ScrollView")),
-                                        0),
-                                12)));
-        appCompatButton2.perform(scrollTo(), click());
-
-        pressBack();
-
-        // Added a sleep statement to match the app's execution delay.
-        // The recommended way to handle such scenarios is to use Espresso idling resources:
-        // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
-        try {
-            Thread.sleep(7000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        ViewInteraction actionMenuItemView = onView(
-                allOf(withId(R.id.favourites), withContentDescription("Favourites"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(R.id.action_bar),
-                                        1),
-                                0),
-                        isDisplayed()));
-        actionMenuItemView.perform(click());
-
-        ViewInteraction recyclerView3 = onView(
-                allOf(withId(R.id.recycler_view),
-                        childAtPosition(
-                                withClassName(is("android.support.constraint.ConstraintLayout")),
-                                0)));
-        recyclerView3.perform(actionOnItemAtPosition(1, click()));
+                                1)));
+        recyclerView2.perform(actionOnItemAtPosition(6, click()));
 
         // Added a sleep statement to match the app's execution delay.
         // The recommended way to handle such scenarios is to use Espresso idling resources:
